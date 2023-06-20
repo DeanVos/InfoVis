@@ -65,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/home';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="De statistieken in het WK voetbal" href="WK_merged_plots.html" />
+    <link rel="next" title="De statistieken in het WK voetbal notebook" href="WK_merged_plots.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -151,7 +151,7 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="WK_merged_plots.html">De statistieken in het WK voetbal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="WK_merged_plots.html">De statistieken in het WK voetbal notebook</a></li>
 </ul>
 
     </div>
@@ -345,7 +345,19 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introductie">Introductie</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topic-description">Topic description</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-description-and-preprocessing">Dataset description and preprocessing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-wk-2018">Dataset WK 2018</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#link-https-www-kaggle-com-datasets-shikhar07-fifa-2018-dataset">Link: https://www.kaggle.com/datasets/shikhar07/fifa-2018-dataset</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-wk-2022">Dataset WK 2022</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#link-https-www-kaggle-com-datasets-die9origephit-fifa-world-cup-2022-complete-dataset">Link: https://www.kaggle.com/datasets/die9origephit/fifa-world-cup-2022-complete-dataset</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -359,9 +371,30 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="de-statistieken-in-het-wk-voetbal">
 <h1>De statistieken in het WK voetbal<a class="headerlink" href="#de-statistieken-in-het-wk-voetbal" title="Permalink to this heading">#</a></h1>
-<section id="introductie">
-<h2>Introductie<a class="headerlink" href="#introductie" title="Permalink to this heading">#</a></h2>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
 <p>In deze data story project worden de datasets van het Wereldkampioenschap (WK) van 2018 en 2022 geanalyseerd. Het WK voetbal is een van de meest prestigieuze toernooien in de wereld die maar één in de vier jaar wordt georganiseerd. In het project worden de datasets aandachtig geanalyseerd en vergeleken met elkaar om interessante bevindingen te verkrijgen. Met deze twee datasets kunnen we interessante visualisaties creëren om vervolgens inzicht te krijgen op bijvoorbeeld de prestaties en trends tussen deze twee toernooien. In deze data story project zullen we eerst het onderwerp beschrijven met de bijbehorende perspectieven. Vervolgens worden de datasets beschreven, daarnaast wordt er beschreven hoe de datasets zijn bewerkt en gefilterd. In het middendeel van de data story project worden er meerdere visualisaties gegeven die elk een eigen punt en argument illustreren. Ten slotte wordt er in de afsluiting een reflectie gegeven met de verkregen feedback van de TA’s  en andere studenten. In de afsluiting wordt ook de werkdistributie in de groep vermeld.</p>
+</section>
+<section id="topic-description">
+<h2>Topic description<a class="headerlink" href="#topic-description" title="Permalink to this heading">#</a></h2>
+<p>In de data story project staat het vergelijken van statistieken en prestaties van verschillende teams centraal. De datasets die worden gebruikt is de dataset van het WK voetbal van 2018, en de dataset van het WK voetbal 2022. Door de datasets te analyseren en verschillende visualisaties te maken is het mogelijk om te ontdekken welke factoren invloed hebben op het succes in het WK voetbal. De datasets bevatten heel veel variabelen en mogelijke invalshoeken. Niet alleen statistieken zoals schoten op doel of balbezit, maar ook gegevens zoals het aantal lange ballen, aantal pogingen/gelukte liniedoorbraken, etc.</p>
+</section>
+<section id="dataset-description-and-preprocessing">
+<h2>Dataset description and preprocessing<a class="headerlink" href="#dataset-description-and-preprocessing" title="Permalink to this heading">#</a></h2>
+<section id="dataset-wk-2018">
+<h3>Dataset WK 2018<a class="headerlink" href="#dataset-wk-2018" title="Permalink to this heading">#</a></h3>
+<section id="link-https-www-kaggle-com-datasets-shikhar07-fifa-2018-dataset">
+<h4>Link: <a class="reference external" href="https://www.kaggle.com/datasets/shikhar07/fifa-2018-dataset">https://www.kaggle.com/datasets/shikhar07/fifa-2018-dataset</a><a class="headerlink" href="#link-https-www-kaggle-com-datasets-shikhar07-fifa-2018-dataset" title="Permalink to this heading">#</a></h4>
+<p>Deze dataset bevat informatie over de prestaties van voetbalteams op het WK voetbal van 2018. Hierbij kan er aan de hand van 27 verschillende variabelen/kolommen gekeken worden naar de prestaties van de teams. Zo wordt de winnaar, het balbezit en het aantal gele kaarten bijvoorbeeld benoemd. Daarnaast zijn er heel veel andere variabelen die we kunnen vergelijken, zoals op balbezit en gele/rode kaarten, schoten en doelpunten etc.</p>
+</section>
+</section>
+<section id="dataset-wk-2022">
+<h3>Dataset WK 2022<a class="headerlink" href="#dataset-wk-2022" title="Permalink to this heading">#</a></h3>
+<section id="link-https-www-kaggle-com-datasets-die9origephit-fifa-world-cup-2022-complete-dataset">
+<h4>Link: <a class="reference external" href="https://www.kaggle.com/datasets/die9origephit/fifa-world-cup-2022-complete-dataset">https://www.kaggle.com/datasets/die9origephit/fifa-world-cup-2022-complete-dataset</a><a class="headerlink" href="#link-https-www-kaggle-com-datasets-die9origephit-fifa-world-cup-2022-complete-dataset" title="Permalink to this heading">#</a></h4>
+<p>Deze dataset bevat data over alle gespeelde voetbalwedstrijden die plaats hebben gevonden tijdens het WK 2022 in Qatar. Er valt bijvoorbeeld informatie te vinden over de landen die tegen elkaar hebben gespeeld, de eindscore, tijdsduur en vele andere variabelen. Niet alleen statistieken zoals schoten op doel of balbezit, maar ook gegevens zoals aantal lange ballen, aantal pogingen/gelukte liniedoorbraken, etc.</p>
+</section>
+</section>
 </section>
 <div class="toctree-wrapper compound">
 </div>
@@ -403,7 +436,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">De statistieken in het WK voetbal</p>
+        <p class="prev-next-title">De statistieken in het WK voetbal notebook</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -425,7 +458,19 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introductie">Introductie</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topic-description">Topic description</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-description-and-preprocessing">Dataset description and preprocessing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-wk-2018">Dataset WK 2018</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#link-https-www-kaggle-com-datasets-shikhar07-fifa-2018-dataset">Link: https://www.kaggle.com/datasets/shikhar07/fifa-2018-dataset</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-wk-2022">Dataset WK 2022</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#link-https-www-kaggle-com-datasets-die9origephit-fifa-world-cup-2022-complete-dataset">Link: https://www.kaggle.com/datasets/die9origephit/fifa-world-cup-2022-complete-dataset</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
