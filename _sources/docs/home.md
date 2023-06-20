@@ -10,10 +10,12 @@ In de data story project staat het vergelijken van statistieken en prestaties va
 ## Dataset description and preprocessing
 #### Dataset WK 2018
 Link: https://www.kaggle.com/datasets/shikhar07/fifa-2018-dataset
+
 Deze dataset bevat informatie over de prestaties van voetbalteams op het WK voetbal van 2018. Hierbij kan er aan de hand van 27 verschillende variabelen/kolommen gekeken worden naar de prestaties van de teams. Zo wordt de winnaar, het balbezit en het aantal gele kaarten bijvoorbeeld benoemd. Daarnaast zijn er heel veel andere variabelen die we kunnen vergelijken, zoals op balbezit en gele/rode kaarten, schoten en doelpunten etc.
 
 #### Dataset WK 2022
 Link: https://www.kaggle.com/datasets/die9origephit/fifa-world-cup-2022-complete-dataset
+
 Deze dataset bevat data over alle gespeelde voetbalwedstrijden die plaats hebben gevonden tijdens het WK 2022 in Qatar. Er valt bijvoorbeeld informatie te vinden over de landen die tegen elkaar hebben gespeeld, de eindscore, tijdsduur en vele andere variabelen. Niet alleen statistieken zoals schoten op doel of balbezit, maar ook gegevens zoals aantal lange ballen, aantal pogingen/gelukte liniedoorbraken, etc.
 
 ## Perspectives
