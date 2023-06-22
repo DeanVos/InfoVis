@@ -18,19 +18,30 @@ Link: https://www.kaggle.com/datasets/die9origephit/fifa-world-cup-2022-complete
 
 Deze dataset bevat data over alle gespeelde voetbalwedstrijden die plaats hebben gevonden tijdens het WK 2022 in Qatar. Er valt bijvoorbeeld informatie te vinden over de landen die tegen elkaar hebben gespeeld, de eindscore, tijdsduur en vele andere variabelen. Niet alleen statistieken zoals schoten op doel of balbezit, maar ook gegevens zoals aantal lange ballen, aantal pogingen/gelukte liniedoorbraken, etc.
 
+#### Preprocessing
+Preprocessing: 
+Stap 1: De dataset van het WK van 2018 heeft de kolommen: ‘Team’ en ‘Opponent’ om de teams mee aan te duiden. De dataset van het WK van 2022 heeft de kolommen: ‘team1’ en 'team 2' om de teams aan te duiden. Allereerst hebben we de kolomnamen van de 2018 dataset veranderd van ‘Team’ naar ‘team1’ en ‘Opponent’ naar ‘team2’.
+- df_2018 = df_2018.rename(columns = {'Team': 'team1'})
+- df_2018 = df_2018.rename(columns = {'Opponent': 'team2'})
+
+Stap 2: Nu hebben deze twee kolommen in beide datasets dezelfde naam, op deze kolommen hebben we de datasets samengevoegd.
+- merged_df = df_2022.merge(df_2018, on = ['team1', 'team2'], how = 'outer')
+
+
+
 ## Perspectives
 #### Deel 1
-In het eerste perspectief gaan we kijken naar de intensiviteit van de WK wedstrijden. 'Wordt er in het ene WK ruiger gespeeld dan in het andere WK?' of 'Wordt er in de knock-outfase feller gespeeld dan in de groepsfase?' zijn vragen die bij ons opkomen bij dit perspectief. Bij de eerste stelling gaan we  vooral variabelen analyseren zoals overtredingen en gele/rode kaarten. 
+In het eerste perspectief gaan we kijken naar de intensiviteit van de WK wedstrijden. 'Wordt er in het ene WK ruiger gespeeld dan in het andere WK?' of 'Wordt er in de knock-outfase feller gespeeld dan in de groepsfase?' zijn vragen die bij ons opkomen bij dit perspectief. Bij de eerste stelling gaan we vooral variabelen analyseren zoals overtredingen en gele/rode kaarten. 
 Perspectief 1: Tijdens het WK van 2022 zijn er minder kaarten gegeven dan in het WK van 2018 doordat spelers zich bewust zijn geworden van de VAR en strenge scheidsrechters, en daardoor voorzichtiger en bewuster zijn gaan spelen.
 
-Om dit te analyseren gaan we eerst kijken naar de cijfers van het aantal overtredingen per wedstrijd. Dit is mooi weer te geven in een boxplot, die geeft van het WK van 2018 en 2022 de statistieken wat betreft het aantal overtredingen per jaar. De boxplot in figuur 1 geeft bijvoorbeeld het maximale en minimale aantal overtredingen per wedstrijd, het gemiddelde, etc. (als deze plot af is kunnen we beargumenteren dat het aantal overtredingen tussen de 2 WK's gelijk of verschillend is.)
+Om dit te analyseren gaan we eerst kijken naar het totaal aantal overtredingen per WK. Als er in het WK van 2022 minder intensief en ruig wordt gespeeld, zullen er vanzelfsprekend ook minder overtredingen zijn gemaakt. In figuur 1 is te zien dat er in het WK van 2018 iets meer overtredingen zijn gemaakt dan in het WK van 2022, 134 overtredingen meer om precies te zijn. Om te kijken of de trends wat betreft het aantal overtredingen per WK te vergelijken, gaan we kijken naar de trend van het aantal overtredingen per wedstrijd. Dit is mooi weer te geven in een boxplot, die geeft van het WK van 2018 en 2022 de statistieken wat betreft het aantal overtredingen per jaar. De boxplot in figuur 1 geeft bijvoorbeeld het maximale en minimale aantal overtredingen per wedstrijd, het gemiddelde, etc. (als deze plot af is kunnen we beargumenteren dat het aantal overtredingen tussen de 2 WK's gelijk of verschillend is.)
 
 Nu we een inzicht hebben van hoeveel overtredingen er waren in het WK van 2018 en in het WK van 2022, gaan we nu analyseren hoeveel kaarten er zijn gevallen in de twee toernooien. Figuur 2 laat zien dat er nauwelijks een verschil is te zien in het aantal gegeven kaarten. 
 
 Perspectief 2: In de knock-outfase van het toernooi zijn er meer overtredingen en kaarten omdat teams feller spelen.
 Om dit te onderzoeken gaan we kijken naar het aantal overtredingen per groep/ronde. Om dit te visualiseren hebben we een bar chart gemaakt (figuur 3), waarmee elke staaf een ronde/groep representeert. Je ziet dat er in de kwartfinales en in de finale flink wat kaarten zijn uitgedeeld, tot drie keer toe zijn er 45+ kaarten uitgedeeld. 
 
-(Nog 1 plot/visualisatie zou dit argument kunnen versterken, want het lijkt erop dat er in de knock-outfases meer kaarten worden gegeven, maar nog een chart zou dit argument/visualsatiecomponent helemaal compleet maken!) 
+(Nog 1 plot/visualisatie zou dit argument kunnen versterken, want het lijkt erop dat er in de knock-outfases meer kaarten worden gegeven, maar nog een chart zou dit argument/visualisatiecomponent helemaal compleet maken!) 
 
 Perspectief 3: Teams met het meeste aantal passes hebben een grotere kans op het maken van doelpunten.
 
