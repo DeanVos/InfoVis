@@ -18,29 +18,70 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-# Alle benodigde imports en datasets
-import pandas as pd
-import plotly.graph_objects as go
-import plotly.express as px
-import matplotlib.pyplot as plt
-import numpy as np
-import seaborn as sns
 import ipywidgets as widgets
 from ipywidgets import interact
-wk2018 = pd.read_csv('FIFA 2018 Statistics.csv')
-wk2022 = pd.read_csv('Fifa_world_cup_matches.csv')
-wk_df = pd.read_csv('wk_merged_datasets.csv')
+# # relevante variabelen
+# variabelen = ['Goal Scored', 'Ball Possession %', 'Attempts']
+# scatter_df = wk_df[variabelen]
+
+# # scatterplot matrix
+# fig = go.Figure(data = go.Splom(
+#                 dimensions = [dict(label = var, values = scatter_df[var]) for var in variabelen],
+#                 diagonal = dict(visible = False),
+#                 showupperhalf = False,
+#                 marker =  dict(color = wk_df['Goal Scored'], colorscale = 'Viridis', size = 6,
+#                 colorbar = dict(title = 'Aantal Doelpunten'))))
+
+# # titel en andere opmaak toevoegen
+# fig.update_layout(
+#     title = 'Figuur 7: Correlatie Scatterplot',
+#     height= 900,
+#     width = 900)
+
+# # scatterplot weergeven
+# fig.show()
+
+# relevante variabelen
+variabelen = ['Goal Scored', 'Ball Possession %', 'Attempts']
+scatter_df = wk_df[variabelen]
+
+# functie maken voor scatterplot -> 
+def scatterplot(Scatterplot):
+    fig = go.Figure(data = go.Scatter(
+        x = scatter_df['Goal Scored'],
+        y = scatter_df[Scatterplot],
+        mode = 'markers',
+        marker = dict(
+            size = 7,
+            color = scatter_df[Scatterplot],
+            colorscale = 'Viridis',
+            # juiste titel bij de kleurindex (Scatterplot)
+            colorbar = dict(title = Scatterplot))))
+
+    # titel en opmaak
+    fig.update_layout(
+        title = f'Figuur 11: Correlatie Scatterplot: Goal Scored vs {Scatterplot}',
+        xaxis_title = 'Goal Scored',
+        yaxis_title = Scatterplot)
+    # plotten
+    fig.show()
+
+# interactieve plot, je kan kiezen tussen de variabelen
+interact(scatterplot, Scatterplot = widgets.Dropdown(options = variabelen, value = 'Goal Scored'))
 ------------------
 
 
 [1;31m---------------------------------------------------------------------------[0m
 [1;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-Cell [1;32mIn[1], line 8[0m
-[0;32m      6[0m [38;5;28;01mimport[39;00m [38;5;21;01mnumpy[39;00m [38;5;28;01mas[39;00m [38;5;21;01mnp[39;00m
-[0;32m      7[0m [38;5;28;01mimport[39;00m [38;5;21;01mseaborn[39;00m [38;5;28;01mas[39;00m [38;5;21;01msns[39;00m
-[1;32m----> 8[0m [38;5;28;01mimport[39;00m [38;5;21;01mipywidgets[39;00m [38;5;28;01mas[39;00m [38;5;21;01mwidgets[39;00m
-[0;32m      9[0m [38;5;28;01mfrom[39;00m [38;5;21;01mipywidgets[39;00m [38;5;28;01mimport[39;00m interact
-[0;32m     10[0m wk2018 [38;5;241m=[39m pd[38;5;241m.[39mread_csv([38;5;124m'[39m[38;5;124mFIFA 2018 Statistics.csv[39m[38;5;124m'[39m)
+Cell [1;32mIn[12], line 1[0m
+[1;32m----> 1[0m [38;5;28;01mimport[39;00m [38;5;21;01mipywidgets[39;00m [38;5;28;01mas[39;00m [38;5;21;01mwidgets[39;00m
+[0;32m      2[0m [38;5;28;01mfrom[39;00m [38;5;21;01mipywidgets[39;00m [38;5;28;01mimport[39;00m interact
+[0;32m      3[0m [38;5;66;03m# # relevante variabelen[39;00m
+[0;32m      4[0m [38;5;66;03m# variabelen = ['Goal Scored', 'Ball Possession %', 'Attempts'][39;00m
+[0;32m      5[0m [38;5;66;03m# scatter_df = wk_df[variabelen][39;00m
+[1;32m   (...)[0m
+[0;32m     23[0m 
+[0;32m     24[0m [38;5;66;03m# relevante variabelen[39;00m
 
 [1;31mModuleNotFoundError[0m: No module named 'ipywidgets'
 
